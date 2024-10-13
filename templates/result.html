@@ -1,0 +1,21 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Result</title>
+</head>
+<body>
+    <h1>Classification Result: {{ result_label }}</h1>
+
+    {% if result_label == "Shoplifter" %}
+        <h2 style="color: red;">Warning: Shoplifter Detected!</h2>
+        <img src="https://media.giphy.com/media/jPAdK8Nfzzwt2/giphy.gif" alt="Shoplifter Warning">
+    {% elif result_label == "Safe" %}
+        <h2 style="color: green;">All Clear: No Issues Detected</h2>
+        <img src="https://media.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy.gif" alt="Safe Person">
+    {% else %}
+        <h2>Unknown Result</h2>
+    {% endif %}
+</body>
+</html>

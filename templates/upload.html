@@ -1,0 +1,24 @@
+<!-- templates/upload.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Upload</title>
+</head>
+<body>
+    <h1>Upload Video and Model</h1>
+    <form action="{% url 'upload_video' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="video_file">Video File:</label><br>
+        <input type="file" name="video_file" required><br><br>
+
+        <label for="model_weights">Model Weights (.pth):</label><br>
+        <input type="file" name="model_weights" required><br><br>
+
+        <label for="additional_input">Additional Input (optional):</label><br>
+        <input type="text" name="additional_input"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
